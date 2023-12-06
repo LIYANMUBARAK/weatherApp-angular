@@ -3,6 +3,7 @@ import { FormBuilder, Validators ,FormGroup,ReactiveFormsModule,NgModel} from '@
 import { Weatherdata } from 'src/models/weather.model';
 import { WeatherAppService } from 'src/services/weather-app.service';
 import { TemperatureConvertPipe } from '../shared/temperatureConvert.pipe';
+import { LoaderService } from '../shared/loader/loader.service';
 
 @Component({
   selector: 'app-weather',
@@ -21,6 +22,7 @@ export class WeatherComponent implements OnInit{
 
   constructor(private service:WeatherAppService,
               private fb:FormBuilder,
+              public loaderService:LoaderService
               ){}
 
   ngOnInit(): void {
